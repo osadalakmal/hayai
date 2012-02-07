@@ -79,12 +79,20 @@ namespace Hayai
                     double(deviated) - double(average);                 \
                                                                         \
                 PAD(description <<                                      \
+<<<<<<< HEAD
                     deviated << " " << unit << " (" <<                  \
+=======
+                    deviated << " "unit" (" <<                          \
+>>>>>>> ce710f7... Initial commit.
                     (deviated < average ?                               \
                      Console::TextRed :                                 \
                      Console::TextGreen) <<                             \
                     (deviated > average ? "+" : "") <<                  \
+<<<<<<< HEAD
                     _d_ << " " << unit << " / " <<                      \
+=======
+                    _d_ << " "unit" / " <<                              \
+>>>>>>> ce710f7... Initial commit.
                     (deviated > average ? "+" : "") <<                  \
                     (_d_ * 100.0 / average) << " %" <<                  \
                     Console::TextDefault << ")");                       \
@@ -99,12 +107,20 @@ namespace Hayai
                     double(deviated) - double(average);                 \
                                                                         \
                 PAD(description <<                                      \
+<<<<<<< HEAD
                     deviated << " " << unit << " (" <<                  \
+=======
+                    deviated << " "unit" (" <<                          \
+>>>>>>> ce710f7... Initial commit.
                     (deviated > average ?                               \
                      Console::TextRed :                                 \
                      Console::TextGreen) <<                             \
                     (deviated > average ? "+" : "") <<                  \
+<<<<<<< HEAD
                     _d_ << " " << unit << " / " <<                      \
+=======
+                    _d_ << " "unit" / " <<                              \
+>>>>>>> ce710f7... Initial commit.
                     (deviated > average ? "+" : "") <<                  \
                     (_d_ * 100.0 / average) << " %" <<                  \
                     Console::TextDefault << ")");                       \

@@ -2,7 +2,10 @@
 #include "hayai-test.hpp"
 #include "hayai-defaulttestfactory.hpp"
 #include "hayai-fixture.hpp"
+<<<<<<< HEAD
 #include "hayai-stopwatch.hpp"
+=======
+>>>>>>> ce710f7... Initial commit.
 
 #define BENCHMARK_CLASS_NAME_(fixture_name, benchmark_name) \
     fixture_name ## _ ## benchmark_name ## _Benchmark
