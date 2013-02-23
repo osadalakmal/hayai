@@ -1,6 +1,7 @@
 # Ignore temporary files from OS' and editors
 *~
 .DS_Store
+*.swp
 
 # Ignore build output
 CMakeCache.txt

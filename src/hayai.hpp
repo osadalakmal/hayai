@@ -2,6 +2,7 @@
 #include "hayai-test.hpp"
 #include "hayai-defaulttestfactory.hpp"
 #include "hayai-fixture.hpp"
+#include "hayai-stopwatch.hpp"
 
 #define BENCHMARK_CLASS_NAME_(fixture_name, benchmark_name) \
     fixture_name ## _ ## benchmark_name ## _Benchmark
