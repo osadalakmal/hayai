@@ -1,3 +1,6 @@
+#ifndef DEFINED_HAYAI_STOPWATCH_H
+#define DEFINED_HAYAI_STOPWATCH_H
+
 #include <time.h>
 #include <errno.h>
 #include <auto_ptr.h>
@@ -5,8 +8,6 @@
 #include <sstream>
 
 namespace Hayai { 
-
-    class StopWatch;
 
     /**
      * @desc This class represents a Stop watch metric collector to whom a given stop
@@ -21,6 +22,7 @@ namespace Hayai {
              *       the caller.
              */
             virtual void collecttime(const struct timespec&) = 0;
+            virtual ~StopWatchMetricCollector(){}
     };
 
     /**
@@ -95,3 +97,5 @@ namespace Hayai {
     };
 
 }
+
+#endif //DEFINED_HAYAI_STOPWATCH_H
