@@ -35,6 +35,32 @@
                                                                         \
     void BENCHMARK_CLASS_NAME_(fixture_name, benchmark_name)::TestBody()
 
+
+#define BENCHMARK_NEW(fixture_name,                                        \
+                   benchmark_name,                                      \
+                   runs,                                                \
+                   iterations)                                          \
+    class BENCHMARK_CLASS_NAME_(fixture_name, benchmark_name)           \
+        :   public Hayai::Test                                   \
+    {                                                                   \
+    public:                                                             \
+        BENCHMARK_CLASS_NAME_(fixture_name, benchmark_name)()           \
+        {                                                               \
+                                                                        \
+        };                                                              \
+    protected:                                                          \
+        virtual void TestBody();                                        \
+    private:                                                            \
+        static const ::Hayai::TestDescriptor* _descriptor;              \
+    };                                                                  \
+                                                                        \
+    const ::Hayai::TestDescriptor* BENCHMARK_CLASS_NAME_(fixture_name, benchmark_name)::_descriptor = \
+        ::Hayai::Benchmarker::Instance().RegisterTest(#fixture_name, \
+                                                                     #benchmark_name, \
+                                                                     runs, \
+                                                                     iterations, \
+                                                                     new ::Hayai::TestFactoryDefault<BENCHMARK_CLASS_NAME_(fixture_name, benchmark_name)>(), "__is_new_clock__"); \
+
 #define BENCHMARK_F(fixture_name,                        \
                     benchmark_name,                      \
                     runs,                                \

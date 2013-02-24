@@ -176,7 +176,12 @@ namespace Hayai
                     Test* test = descriptor->Factory->CreateTest();
                         
                     // Run the test.
-                    int64_t time = test->Run(descriptor->Iterations);
+                    int64_t time = 0;
+                    if (descriptor->Parameters.find("___is_new_clock__") != std::string::npos) {
+                        time = test->Run(descriptor->Iterations,Hayai::REALTIME);
+                    } else {
+                        time = test->Run(descriptor->Iterations);
+                    }
                     
                     // Store the test time.
                     timeTotal += time;
